@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body {
+			background-color: orange;
+			color: white;
+			font-family: tahoma;
+		}
+
+		#centerdot {
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+			/*margin: auto auto;*/
+			position: absolute;
+			z-index: 100;
+		}
+
+	</style>
+</head>
+<body>
+	<p style="font-weight: bold;">Find your location...</p>
+	<p>Share location if you want to see the result)</p>
+
+	<button onclick="getLocation()">Try it</button>
+
+	<p id="demo"></p>
+
+	<div id="mapholder" style="position: relative;"></div>
+
+	<script type="text/javascript">
+
+		var x = document.getElementById("demo");
+
+		function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			} else {
+				x.innerHTML = "Not support";
+			}
+		}
+
+		function showPosition(position) {
+			// x.innerHTML = "Lat: " + position.coords.latitude + "<br>Long: " + position.coords.longitude;
+			var latlong = position.coords.latitude + "," + position.coords.longitude;
+			var imgUrl = "http://maps.googleapis.com/maps/api/staticmap?center=" + latlong + "&zoom=14&size=400x300&sensor=false";
+
+			document.getElementById("mapholder").innerHTML="<img src='"+ imgUrl +"'><div class='centerdot'></div>";
+
+		}
+
+	</script>
+
+</body>
+</html>
