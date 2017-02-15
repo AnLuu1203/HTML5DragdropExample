@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function allowdrop(ev) {
+			ev.preventDefault();
+		}
+
+		function drag(ev) {
+			ev.dataTransfer.setData("Text", ev.target.id);
+		}
+
+		function drop(ev) {
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData("Text");
+			ev.target.appendChild(document.getElementById(data));
+		}
+	</script>
+
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		#main_tb {
+			width: 500px;
+			height: 500px;
+			position: relative;
+			float: left;
+		}
+
+		#main_tb tr td {
+			position: relative;
+			width: 33%;
+			height: 33%;
+			background-color: brown;
+		}
+
+		#main_tb tr td div {
+			width: 100%;
+			height: 100%;
+			background-color: red;
+		}
+
+		#main_tb tr td img {
+			position: relative;
+			width: 166px;
+			height: 166px;
+		}
+
+		#main_tb_2 {
+			width: 500px;
+			height: 500px;
+			position: relative;
+			float: left;
+		}
+
+		#main_tb_2 tr td {
+			position: relative;
+			width: 33%;
+			height: 33%;
+			background-color: brown;
+		}
+
+		#main_tb_2 tr td img {
+			position: relative;
+			width: 166px;
+			height: 166px;
+		}
+
+	</style>
+
+</head>
+<body>
+<table id="main_tb">
+	<tr>
+		<td>
+			<div id="div1" ondrop="drop(event)" ondragover="allowdrop(event)"></div>
+		</td>
+		<td>
+			<div id="div2" ondrop="drop(event)" ondragover="allowdrop(event)"></div>
+		</td>
+		<td>
+			<div id="div3" ondrop="drop(event)" ondragover="allowdrop(event)"></div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="div4" ondrop="drop(event)" ondragover="allowdrop(event)"></div>
+		</td>
+		<td>
+			<div id="div5" ondrop="drop(event)" ondragover="allowdrop(event)"></div>
+		</td>
+		<td>
+			<div id="div6" ondrop="drop(event)" ondragover="allowdrop(event)"></div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="div7" ondrop="drop(event)" ondragover="allowdrop(event)"></div>
+		</td>
+		<td>
+			<div id="div8" ondrop="drop(event)" ondragover="allowdrop(event)"></div>
+		</td>
+		<td>
+			<div id="div9" ondrop="drop(event)" ondragover="allowdrop(event)"></div>
+		</td>
+	</tr>
+</table>
+
+<table id="main_tb_2">
+	<tr>
+		<td>
+			<img id="t1" src="rubik/rubik7.jpg" draggable="true" ondragstart="drag(event)" >
+		</td>
+		<td>
+			<img id="t2" src="rubik/rubik1.jpg" draggable="true" ondragstart="drag(event)">
+		</td>
+		<td>
+			<img id="t3" src="rubik/rubik4.jpg" draggable="true" ondragstart="drag(event)">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img id="t4" src="rubik/rubik2.jpg" draggable="true" ondragstart="drag(event)">
+		</td>
+		<td>
+			<img id="t5" src="rubik/rubik5.jpg" draggable="true" ondragstart="drag(event)">
+		</td>
+		<td>
+			<img id="t6" src="rubik/rubik3.jpg" draggable="true" ondragstart="drag(event)">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img id="t7" src="rubik/rubik8.jpg" draggable="true" ondragstart="drag(event)">
+		</td>
+		<td>
+			<img id="t8" src="rubik/rubik6.jpg" draggable="true" ondragstart="drag(event)">
+		</td>
+		<td>
+			<img id="t9" src="rubik/rubik9.jpg" draggable="true" ondragstart="drag(event)">
+		</td>
+	</tr>
+</table>
+</body>
+</html>
