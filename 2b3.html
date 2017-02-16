@@ -8,26 +8,20 @@
 			font-family: tahoma;
 		}
 
-		#centerdot {
-			width: 100px;
-			height: 100px;
-			background-color: blue;
-			/*margin: auto auto;*/
-			position: absolute;
-			z-index: 100;
-		}
-
 	</style>
 </head>
 <body>
 	<p style="font-weight: bold;">Find your location...</p>
-	<p>Share location if you want to see the result)</p>
+	<p>Share location if you want to see the result</p>
 
 	<button onclick="getLocation()">Try it</button>
 
 	<p id="demo"></p>
 
 	<div id="mapholder" style="position: relative;"></div>
+
+	<!-- Google Maps API -->
+	<script src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBZK7GgBe2PYYn5qeZ28nC86gWSuOP1vuQ"></script>
 
 	<script type="text/javascript">
 
@@ -42,12 +36,23 @@
 		}
 
 		function showPosition(position) {
-			// x.innerHTML = "Lat: " + position.coords.latitude + "<br>Long: " + position.coords.longitude;
-			var latlong = position.coords.latitude + "," + position.coords.longitude;
-			var imgUrl = "http://maps.googleapis.com/maps/api/staticmap?center=" + latlong + "&zoom=14&size=400x300&sensor=false";
+			var latitude = position.coords.latitude;
+			var longitude = position.coords.longitude;
 
-			document.getElementById("mapholder").innerHTML="<img src='"+ imgUrl +"'><div class='centerdot'></div>";
+			var latlong = new google.maps.LatLng(latitude, longitude);
+			var mapholder = document.getElementById('mapholder');
+			mapholder.style.height = '500px';
+			mapholder.style.width = '700px';
 
+			var options = {
+				center: latlong,
+				zoom: 14,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				navigationControlOptions: {style:google.maps.NavigationControlStyle.SMALL}
+			}
+
+			var map = new google.maps.Map(document.getElementById("mapholder"), options);
+			var marker = new google.maps.Marker({position:latlong,map:map,title:"You are here!"});
 		}
 
 	</script>
