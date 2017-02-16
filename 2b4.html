@@ -28,6 +28,7 @@
 			height: 500px;
 			position: relative;
 			float: left;
+			margin-right: 40px;
 		}
 
 		#main_tb tr td {
@@ -44,9 +45,11 @@
 		}
 
 		#main_tb tr td img {
-			position: relative;
-			width: 166px;
-			height: 166px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
 		}
 
 		#main_tb_2 {
@@ -64,9 +67,16 @@
 		}
 
 		#main_tb_2 tr td img {
-			position: relative;
-			width: 166px;
-			height: 166px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.full-width {
+			width: 100%;
+			height: 100%;
 		}
 
 	</style>
@@ -112,35 +122,53 @@
 <table id="main_tb_2">
 	<tr>
 		<td>
-			<img id="t1" src="rubik/rubik7.jpg" draggable="true" ondragstart="drag(event)" >
+			<div class="full-width" ondrop="drop(event)" ondragover="allowdrop(event)">
+				<img id="t1" src="rubik/rubik7.jpg" draggable="true" ondragstart="drag(event)">
+			</div>
 		</td>
 		<td>
-			<img id="t2" src="rubik/rubik1.jpg" draggable="true" ondragstart="drag(event)">
+			<div class="full-width" ondrop="drop(event)" ondragover="allowdrop(event)">
+				<img id="t2" src="rubik/rubik1.jpg" draggable="true" ondragstart="drag(event)">
+			</div>
 		</td>
 		<td>
-			<img id="t3" src="rubik/rubik4.jpg" draggable="true" ondragstart="drag(event)">
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<img id="t4" src="rubik/rubik2.jpg" draggable="true" ondragstart="drag(event)">
-		</td>
-		<td>
-			<img id="t5" src="rubik/rubik5.jpg" draggable="true" ondragstart="drag(event)">
-		</td>
-		<td>
-			<img id="t6" src="rubik/rubik3.jpg" draggable="true" ondragstart="drag(event)">
+			<div class="full-width" ondrop="drop(event)" ondragover="allowdrop(event)">
+				<img id="t3" src="rubik/rubik4.jpg" draggable="true" ondragstart="drag(event)">
+			</div>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<img id="t7" src="rubik/rubik8.jpg" draggable="true" ondragstart="drag(event)">
+			<div class="full-width" ondrop="drop(event)" ondragover="allowdrop(event)">
+				<img id="t4" src="rubik/rubik2.jpg" draggable="true" ondragstart="drag(event)">
+			</div>
 		</td>
 		<td>
-			<img id="t8" src="rubik/rubik6.jpg" draggable="true" ondragstart="drag(event)">
+			<div class="full-width" ondrop="drop(event)" ondragover="allowdrop(event)">
+				<img id="t5" src="rubik/rubik5.jpg" draggable="true" ondragstart="drag(event)">
+			</div>
 		</td>
 		<td>
-			<img id="t9" src="rubik/rubik9.jpg" draggable="true" ondragstart="drag(event)">
+			<div class="full-width" ondrop="drop(event)" ondragover="allowdrop(event)">
+				<img id="t6" src="rubik/rubik3.jpg" draggable="true" ondragstart="drag(event)">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="full-width" ondrop="drop(event)" ondragover="allowdrop(event)">
+				<img id="t7" src="rubik/rubik8.jpg" draggable="true" ondragstart="drag(event)">
+			</div>
+		</td>
+		<td>
+			<div class="full-width" ondrop="drop(event)" ondragover="allowdrop(event)">
+				<img id="t8" src="rubik/rubik6.jpg" draggable="true" ondragstart="drag(event)">
+			</div>
+		</td>
+		<td>
+			<div class="full-width" ondrop="drop(event)" ondragover="allowdrop(event)">
+				<img id="t9" src="rubik/rubik9.jpg" draggable="true" ondragstart="drag(event)">
+			</div>
 		</td>
 	</tr>
 </table>
